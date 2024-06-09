@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: 9558d7474f0696d4f8bbe3ac17ec4f8e
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FACTORY_G_PC0056out
+    second: {fileID: 2800000, guid: e8072c76be8d40a44b61c840aab6fe58, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FACTORY_INTRO1_PC0011out
+    second: {fileID: 2800000, guid: b4e4994451116ae4cb4962f7efd4816e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FACTORY_INTRO1_PC0016out
+    second: {fileID: 2800000, guid: ba450960ebb1ffd4ab252014f7ff3bfc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FACTORY_INTRO1_PC0021out
+    second: {fileID: 2800000, guid: 79158a5785b785c47aa3ff721c134040, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor_Cracked_DesatNew
+    second: {fileID: 2800000, guid: 0fab8a66a3d60e5409e893bef7f2c59a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GEOWeap_027out
+    second: {fileID: 2800000, guid: c964a353d7125a14390e265b89a79f63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GEO_PRGATE_0168
+    second: {fileID: 2800000, guid: dbc5b03825f38474693ff5d2e33685e1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GEO_PRGATE_0202
+    second: {fileID: 2800000, guid: 73195d074f4e611409f2146e8f3529f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_015
+    second: {fileID: 2800000, guid: 87e3bd162a64e8548b35dcf8036310e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_022
+    second: {fileID: 2800000, guid: 830c8f03acb8d5c4e889b39639d9452b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_024
+    second: {fileID: 2800000, guid: e0c43224934045743be69aa8ec298b4d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_026
+    second: {fileID: 2800000, guid: eee467982a3b80b42ab1acea25981d25, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_030
+    second: {fileID: 2800000, guid: 59181fcad7fb1904795ba2be928c7bb4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_032
+    second: {fileID: 2800000, guid: 273233b8387ef6f42a2d3e588f450a1a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_033
+    second: {fileID: 2800000, guid: aabb121ec189f874fbad0172b93fdaca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_038
+    second: {fileID: 2800000, guid: 316d579738c6f994699b38b6fda06d5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_04
+    second: {fileID: 2800000, guid: 52168240e262ab34e9a66cfac6f2d79a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_043
+    second: {fileID: 2800000, guid: e123d6fd54fb5864887a14e5506da434, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_045
+    second: {fileID: 2800000, guid: c106e5343d03bfc4caa44a77d0f12b67, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_047
+    second: {fileID: 2800000, guid: ef72fd666b3b1c9469052f82a65f1e68, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_051
+    second: {fileID: 2800000, guid: 12eea9e372f302047bdb87251dab990a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_053
+    second: {fileID: 2800000, guid: 7220969fdaa199441a4049693907b489, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_057
+    second: {fileID: 2800000, guid: e111c75184b1fa34991a331de9efde90, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_063
+    second: {fileID: 2800000, guid: 4f693312544ce904ab722505fefb3738, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_065
+    second: {fileID: 2800000, guid: a2073c325d52abb4383060d61e195e78, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_074
+    second: {fileID: 2800000, guid: 6dd4fe29241dac241abde5cb042408b3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_079
+    second: {fileID: 2800000, guid: ef76b710019f72342b77059c6e42f5de, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_080
+    second: {fileID: 2800000, guid: 2e590b99529a52e4582ac64477bc08bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: GeoArena_082
+    second: {fileID: 2800000, guid: 377fd720d140aef4b9dd45e9cfedc4d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RCG_001out
+    second: {fileID: 2800000, guid: 53cbca666bed88c4086ed199f133aece, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RCG_015out
+    second: {fileID: 2800000, guid: 6bb663a24b2a7234ebe4af024fb348a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RCG_019out
+    second: {fileID: 2800000, guid: e6003091f107eb64e8fb8188907ac84d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: RCG_027out
+    second: {fileID: 2800000, guid: 0370821e456b9cd4985ca8d0ba8d2bff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ArenaPillarMetal_01_CSout
+    second: {fileID: 2800000, guid: 4d9e80826a6d5f0489a63d47e4a6b3c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_ArenaPillar_03_CSout
+    second: {fileID: 2800000, guid: 353e1ddc5af639b42a41dde61e8dbcd7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_GEO_CaveGate_01_NAM
+    second: {fileID: 2800000, guid: 2a3bcfc51a38d8742b8ff73322b18ed3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0128_4out
+    second: {fileID: 2800000, guid: 890caba77d35cfd488445f441f2f75e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: floor_cracked_desatnewout
+    second: {fileID: 2800000, guid: 3047305131c2df844a71b20056eaa2fe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: redorange_tarp
+    second: {fileID: 2800000, guid: d06c4d91974768b408ff60db02cbda9f, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.6
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.006
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
