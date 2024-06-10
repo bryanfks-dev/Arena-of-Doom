@@ -1,7 +1,7 @@
-using MikeNspired.UnityXRHandPoser;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 class Wave
 {
@@ -13,8 +13,7 @@ class Wave
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject OverallPlayer;
-    private Transform _PlayerCamera;
+    public GameObject Player;
 
     public int StartingMonstersCount;
     private int _TotalMultiplier = 0;
@@ -24,9 +23,7 @@ public class GameManager : MonoBehaviour
     private int CurrentWaveIndex = 0;
 
     private float _WaveCountdown = 0f;
-    public float TimeBetweenWave = 30f;
-
-    public float MagazineSpawnCountdown = 5f;
+    public float TimeBetweenWave = 5f;
 
     public GameObject MonstersParent;
     public GameObject[] Monsters;
@@ -41,17 +38,13 @@ public class GameManager : MonoBehaviour
     public Transform InventorySlots;
     public Transform MagazineSpawners;
 
-    private string[] _WeaponNames = new string[2];
-    private GameObject[] _WeaponMagazines = {};
+    public GameObject[] MagazineSpawnerPrefabs;
+
+    public static bool IsReady = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        InitializePlayer();
-
-        GetWeaponNames();
-        LoadWeaponMagazines();
-
         _CenterX = transform.position.x;
         _CenterZ = transform.position.z;
 
@@ -61,86 +54,33 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _WaveCountdown -= Time.deltaTime;
-
-        if (_WaveCountdown <= 0f)
+        if (IsReady)
         {
-            Debug.Log(CurrentWaveIndex);
-            _WaveCountdown = _Waves[CurrentWaveIndex].TimeToNextWave;
-            StartCoroutine(SpawnWave());
-            InitiateNewWave();
-        }
-    }
+            _WaveCountdown -= Time.deltaTime;
 
-    private void InitializePlayer()
-    {
-        OverallPlayer = DontDestroyObjects.Player;
-
-        Debug.Log(OverallPlayer);
-
-        // Change player attributes
-        DontDestroyObjects.ArenaSpawn();
-
-        OverallPlayer.SetActive(false);
-        OverallPlayer.SetActive(true);
-
-        // Find grandchild
-        DynamicMoveProvider XROrigin =
-            OverallPlayer.transform.GetChild(0).Find("XR Origin").GetComponent<DynamicMoveProvider>();
-
-        XROrigin.moveSpeed = 45;
-
-        _PlayerCamera = 
-            OverallPlayer.transform.GetChild(0).Find("XR Origin").Find("CameraOffset").Find("Main Camera");
-    }
-
-    private void GetWeaponNames()
-    {
-        for (int i = 0; i < InventorySlots.childCount; i++)
-        {
-            InventorySlot Slot = InventorySlots.GetChild(i).GetComponent<InventorySlot>();
-
-            if (Slot.CurrentSlotItem != null)
+            if (_WaveCountdown <= 0f)
             {
-                _WeaponNames[i] = Slot.CurrentSlotItem.gameObject.name;
-            }
-        }
-    }
-
-    private void LoadWeaponMagazines()
-    {
-        Dictionary<string, string> WeaponMagezinePairs = new Dictionary<string, string>()
-        {
-            { "Rifle 2Hand- Auto Fire", "AR Magazine Model" },
-            { "HandGun Reloading Variant", "HandGun Magazine" },
-        };
-
-        int WeaponMagazinesIndex = 0;
-
-        for (int i = 0; i < _WeaponNames.Length; i++)
-        {
-            // Check if weapon is exist, and magazine is available for this weapon
-            if (_WeaponNames[i] != null && WeaponMagezinePairs.ContainsKey(_WeaponNames[i]))
-            {
-                _WeaponMagazines[WeaponMagazinesIndex++] = 
-                    Resources.Load("/Weapons/Magazines/" + WeaponMagezinePairs[_WeaponNames[i]]) as GameObject;
+                _WaveCountdown = _Waves[CurrentWaveIndex].TimeToNextWave;
+                StartCoroutine(SpawnWave());
+                InitiateNewWave();
             }
         }
     }
 
     private void InitializeMagazineSpawner()
     {
-        if (_WeaponMagazines.Length > 0)
+        for (int i = 0; i < MagazineSpawners.childCount; i++)
         {
-            for (int i = 0; i < MagazineSpawners.childCount; i++)
+            Transform Child = MagazineSpawners.GetChild(i);
+
+            if (Child.childCount > 0)
             {
-                Transform Child = MagazineSpawners.GetChild(i);
-
-                ObjectSpawner ObjSpawner = Child.GetComponent<ObjectSpawner>();
-
-                ObjSpawner.Prefab = RandomMagazine();
-                ObjSpawner.spawnTimer = MagazineSpawnCountdown;
+                Destroy(Child.GetChild(0).gameObject);
             }
+
+            GameObject Spawner = Instantiate(RandomSpawner(), Child.position, Quaternion.identity);
+
+            Spawner.transform.parent = Child;
         }
     }
 
@@ -155,7 +95,7 @@ public class GameManager : MonoBehaviour
 
         _Waves.Add(NewWave);
 
-        // InitializeMagazineSpawner();
+        InitializeMagazineSpawner();
     }
 
     private IEnumerator SpawnWave()
@@ -169,13 +109,15 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(_Waves[CurrentWaveIndex].SpawnRate);
         }
 
+        CurrentWaveIndex++;
+
         yield break;
     }
 
     private void SpawnEnemy(Transform Enemy)
     {
         // Set target to current player
-        Enemy.GetComponent<Enemy>().TargetPlayer = _PlayerCamera.gameObject;
+        Enemy.GetComponent<Enemy>().TargetPlayer = Player;
 
         Enemy.SetParent(MonstersParent.transform);
     }
@@ -190,15 +132,44 @@ public class GameManager : MonoBehaviour
         float XPos = UnityEngine.Random.Range(_CenterX - XRadius, _CenterX + XRadius);
         float ZPos = UnityEngine.Random.Range(_CenterZ - ZRadius, _CenterZ + ZRadius);
 
+        NavMeshHit ClosestHit;
+
+        if (NavMesh.SamplePosition(new Vector3(XPos, 0, ZPos), out ClosestHit, 500, 1))
+        {
+            return Instantiate(Monsters[RandomIndex], ClosestHit.position, Quaternion.identity).transform;
+        }
+
         return Instantiate(Monsters[RandomIndex], new Vector3(XPos, MonstersParent.transform.position.y, ZPos), 
             Quaternion.identity).transform;
     }
 
-    private GameObject RandomMagazine()
+    private GameObject RandomSpawner()
     {
         System.Random _Random = new System.Random();
-        int RandomIndex = _Random.Next(0, _WeaponMagazines.Length);
+        int RandomIndex = _Random.Next(0, MagazineSpawnerPrefabs.Length);
 
-        return _WeaponMagazines[RandomIndex].gameObject;
+        return MagazineSpawnerPrefabs[RandomIndex].gameObject;
+    }
+
+    public void ResetArena()
+    {
+        _WaveCountdown = 1f;
+
+        // Destory monsters
+        for (int i = 0; i < MonstersParent.transform.childCount; i++)
+        {
+            Destroy(MonstersParent.transform.GetChild(i).gameObject);
+        }
+
+        // Destroy magazine spawners
+        for (int i = 0; i < MagazineSpawners.childCount; i++)
+        {
+            Transform Child = MagazineSpawners.GetChild(i);
+
+            if (Child.GetChild(0) != null)
+            {
+                Destroy(Child.GetChild(0).gameObject);
+            }
+        }
     }
 }

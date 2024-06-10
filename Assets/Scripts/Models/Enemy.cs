@@ -89,13 +89,21 @@ public class Enemy : MonoBehaviour
         _IsAttacking = false;
     }
 
-    public void TakeDamage(float damage)
+    private void OnTriggerEnter(Collider other)
     {
-        HealthPoint -= damage;
-
-        if (HealthPoint <= 0)
+        if (other.gameObject.tag == "Weapon" || other.gameObject.tag == "projectile")
         {
-            Invoke(nameof(DestroyEnemy), .5f);
+            HealthPoint -= other.gameObject.GetComponent<Weapon>().AttackDmg;
+
+            if (HealthPoint <= 0)
+            {
+                Invoke(nameof(DestroyEnemy), .5f);
+            }
+
+            if (other.gameObject.tag == "projectile")
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 
@@ -104,16 +112,6 @@ public class Enemy : MonoBehaviour
         if (gameObject != null)
         {
             Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Weapon" || other.gameObject.tag == "projectile")
-        {
-            float WeaponDamage = other.gameObject.GetComponent<Weapon>().AttackDmg;
-            
-            TakeDamage(WeaponDamage);
         }
     }
 }

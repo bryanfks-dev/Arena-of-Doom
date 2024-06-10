@@ -8,9 +8,9 @@ namespace MikeNspired.UnityXRHandPoser
     {
         public bool isActive = true;
         [SerializeField] private bool onlySpawnIfRoom = true;
-        [SerializeField] public GameObject Prefab = null;
+        [SerializeField] private GameObject Prefab = null;
         [SerializeField] private Transform spawnPoint = null;
-        [SerializeField] public float spawnTimer = 5;
+        [SerializeField] private float spawnTimer = 5;
 
         private bool hitDetect;
         private float currentTimer = 0;

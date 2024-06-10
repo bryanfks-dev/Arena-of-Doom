@@ -1,6 +1,5 @@
 using MikeNspired.UnityXRHandPoser;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 
 public class MenuHandlers : MonoBehaviour
 {
@@ -10,45 +9,39 @@ public class MenuHandlers : MonoBehaviour
     public GameObject Player;
     public Transform PlayerInventory;
 
+    public GameManager GameManager;
+
     [Header("Debugging Purposes")]
-    public GameObject StartingWeapon;
+    public GameObject StartingWeapon = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.enabled = false;
     }
 
     public void PlayHandler()
     {
-        bool IsReady = false;
-
+        // Check if user has weapon inside inventory
         for (int i = 0; i < PlayerInventory.childCount; i++)
         {
             InventorySlot Slot = PlayerInventory.GetChild(i).GetComponent<InventorySlot>();
-
+        
             if (Slot.CurrentSlotItem != null)
             {
-                IsReady = true;
+                GameManager.IsReady = true;
+                break;
             }
         }
 
-        if (IsReady)
+        if (GameManager.IsReady)
         {
-            if (Player != null)
-            {
-                DontDestroyObjects.Player = Player;
-                DontDestroyObjects.TransitionManager = TransitionManager.gameObject;
-
-                DontDestroyOnLoad(Player);
-                DontDestroyOnLoad(TransitionManager.gameObject);
-            }
+            Player.transform.position = new Vector3(81.18f, 1.76f, -11.16f);
 
             // Hide menus
-            gameObject.SetActive(false);
+            gameObject.SetActive(!GameManager.IsReady);
 
-            // Change scene
-            TransitionManager.GoToScene(1);
+            GameManager.enabled = true;
         }
     }
 
@@ -74,5 +67,10 @@ public class MenuHandlers : MonoBehaviour
     {
         // Method to handle exit button in menu
         Application.Quit();
+    }
+
+    public void Reset()
+    {
+        gameObject.SetActive(true);
     }
 }
