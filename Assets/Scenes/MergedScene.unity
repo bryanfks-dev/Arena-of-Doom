@@ -36603,6 +36603,7 @@ MonoBehaviour:
   CreditContent: {fileID: 968912358}
   TransitionManager: {fileID: 2024068783}
   Player: {fileID: 233605004}
+  Origin: {fileID: 3976845878071809833}
   PlayerInventory: {fileID: 3976845878071809832}
   GameManager: {fileID: 1848920311}
   StartingWeapon: {fileID: 0}

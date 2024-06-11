@@ -7,6 +7,7 @@ public class MenuHandlers : MonoBehaviour
     public GameObject CreditContent;
     public TransitionManager TransitionManager;
     public GameObject Player;
+    public GameObject Origin;
     public Transform PlayerInventory;
 
     public GameManager GameManager;
@@ -37,6 +38,7 @@ public class MenuHandlers : MonoBehaviour
         if (GameManager.IsReady)
         {
             Player.transform.position = new Vector3(81.18f, 1.76f, -11.16f);
+            Origin.transform.position = new Vector3(81.18f, 1.76f, -11.16f);
 
             // Hide menus
             gameObject.SetActive(!GameManager.IsReady);
