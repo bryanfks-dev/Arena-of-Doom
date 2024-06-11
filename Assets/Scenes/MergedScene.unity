@@ -10612,15 +10612,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0507db66b425e154aafe8ccd83cfacd7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 465158653}
+      addedObject: {fileID: 465158655}
   m_SourcePrefab: {fileID: 100100000, guid: 0507db66b425e154aafe8ccd83cfacd7, type: 3}
 --- !u!1 &465158652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0507db66b425e154aafe8ccd83cfacd7, type: 3}
   m_PrefabInstance: {fileID: 465158651}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &465158653
-MeshCollider:
+--- !u!4 &465158654 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0507db66b425e154aafe8ccd83cfacd7, type: 3}
+  m_PrefabInstance: {fileID: 465158651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &465158655
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10637,15 +10642,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!4 &465158654 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0507db66b425e154aafe8ccd83cfacd7, type: 3}
-  m_PrefabInstance: {fileID: 465158651}
-  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.01097049, y: 0.05050351, z: 0.008122667}
+  m_Center: {x: -0.0022238593, y: 0.022690376, z: 0.0021562807}
 --- !u!208 &470187399
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -36599,7 +36598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1e36250c1be9542b350413f5579bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menus: {fileID: 1589264654}
+  Menus: {fileID: 2125082474}
   CreditContent: {fileID: 968912358}
   TransitionManager: {fileID: 2024068783}
   Player: {fileID: 233605004}
@@ -41478,7 +41477,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1589264660}
         m_TargetAssemblyTypeName: MenuHandlers, Assembly-CSharp
         m_MethodName: CreditBackBtnHandler
         m_Mode: 1

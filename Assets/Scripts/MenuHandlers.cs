@@ -50,7 +50,7 @@ public class MenuHandlers : MonoBehaviour
     private void _ToggleActiveCredit()
     {
         Menus.SetActive(!Menus.activeSelf);
-        CreditContent.SetActive(!Menus.activeSelf);
+        CreditContent.SetActive(!CreditContent.activeSelf);
     }
 
     public void CreditHandler()
